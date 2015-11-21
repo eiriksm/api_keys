@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains api_keys.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function api_keys_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the api_keys module.
+    case 'help.page.api_keys':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Authenticate users with API keys') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function api_keys_theme() {
+  $theme = [
+    'api-keys-user-keys' => [
+      'variables' => [
+        'api_key' => '',
+        'post_url' => '',
+      ],
+    ]
+  ];
+
+  return $theme;
+}

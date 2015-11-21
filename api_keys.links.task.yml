@@ -1,0 +1,4 @@
+api_keys.user_api_keys:
+  route_name: api_keys.user_api_keys_controller_index
+  base_route: entity.user.canonical
+  title: 'API keys'

@@ -1,0 +1,8 @@
+api_keys.user_api_keys_controller_index:
+  path: '/user/{user}/api_keys'
+  defaults:
+    _controller: '\Drupal\api_keys\Controller\UserApiKeysController::index'
+    _title: 'User API keys'
+  requirements:
+    _permission: 'access content'
+    user: \d+

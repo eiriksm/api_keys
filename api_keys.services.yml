@@ -3,7 +3,7 @@ services:
     class: Drupal\api_keys\Authentication\Provider\ApiKeysAuthenticationProvider
     arguments: ["@config.factory", "@entity.manager", "@logger.channel.api_keys", "@database"]
     tags:
-      - { name: authentication_provider, provider_id: api_keys_authentication_provider, priority: 100 }
+      - { name: authentication_provider, provider_id: api_keys, priority: 100 }
   logger.channel.api_keys:
       parent: logger.channel_base
       arguments: ['api_keys']

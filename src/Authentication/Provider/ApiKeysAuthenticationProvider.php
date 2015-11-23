@@ -97,7 +97,7 @@ class ApiKeysAuthenticationProvider implements AuthenticationProviderInterface {
 
     $res = $q->execute()->fetchObject();
     if (!$res) {
-      throw new AccessDeniedException('API key not found.');
+      return [];
     }
     else {
       return $this->entityManager->getStorage('user')->load($res->uid);

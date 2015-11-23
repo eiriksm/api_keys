@@ -6,6 +6,6 @@
 </p>
 <pre>
   <code>
-    curl -H "x-drupal-api-key: {{api_key}}" {{post_url}} -d '// @todo'
+    curl -H "Content-Type: application/hal+json" -H "x-drupal-api-key: {{api_key}}" {{base_url}}entity/log -d '{"_links": {"type": {"href": "{{base_url}}rest/type/log/temperature"}},"name": [{"value": "test"}]}'
   </code>
 </pre>

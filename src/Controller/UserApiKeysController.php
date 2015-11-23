@@ -83,16 +83,13 @@ class UserApiKeysController extends ControllerBase {
       $user_key = $user_key_object->user_key;
     }
     // Generate the URL which we should use in the CURL explaination.
-    $post_url = Url::fromRoute('api_keys.user_api_keys_controller_index', [
-      'user' => $user->id(),
-    ], [
-      'absolute' => TRUE,
-    ])->toString();
+    // @todo
     return [
       '#theme' => 'api-keys-user-keys',
       '#api_key' => $user_key,
       // @todo. Fix when route for entity is ready.
       '#post_url' => 'example.com/entity/log',
+      '#base_url' => Url::fromUserInput('/')->setOption('absolute', TRUE),
       '#markup' => $this->t('URL : !url and key: !key', [
         '!url' => $post_url,
         '!key' => $user_key,

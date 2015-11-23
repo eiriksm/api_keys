@@ -32,6 +32,7 @@ function api_keys_theme() {
       'variables' => [
         'api_key' => '',
         'post_url' => '',
+        'base_url' => '',
       ],
     ]
   ];
